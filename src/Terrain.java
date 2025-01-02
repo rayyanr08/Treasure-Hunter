@@ -1,4 +1,3 @@
-
 /**
  * The Terrain class is designed to represent the zones between the towns in the Treasure Hunter game.
  */
@@ -52,6 +51,3 @@ public class Terrain
         return terrainName + " needs a(n) " + neededItem + " to cross.";
     }
 }
-
-Terrain.java
-Displaying TreasureHunter.java.
