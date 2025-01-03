@@ -110,6 +110,7 @@ public class TreasureHunter
             System.out.println("(S)ell something at the shop.");
             System.out.println("(M)ove on to a different town.");
             System.out.println("(L)ook for trouble!");
+            System.out.println("(F)ind Treasure in town");
             System.out.println("Give up the hunt and e(X)it.");
             System.out.println();
             System.out.print("What's your next move? ");
@@ -136,6 +137,8 @@ public class TreasureHunter
                 //This town is going away so print its news ahead of time.
                 System.out.println(currentTown.getLatestNews());
                 enterTown();
+                Treasure newTreasure = new Treasure(hunter);
+                newTreasure.generateTreasure();
             }
         }
         else if (choice.equals("L") || choice.equals("l"))
@@ -145,8 +148,10 @@ public class TreasureHunter
         else if (choice.equals("X") || choice.equals("x"))
         {
             System.out.println("Fare thee well, " + hunter.getHunterName() + "!");
-        }
-        else
+        } else if (choice.equalsIgnoreCase("f")) {
+
+
+        } else
         {
             System.out.println("Yikes! That's an invalid option! Try again.");
         }
