@@ -1,10 +1,14 @@
 public class Treasure {
-    private Hunter hunter;
     private String treasure;
+    private String treasureKit;
+    private boolean hasAllItems;
 
 
-    public Treasure(Hunter hunter){
-        this.hunter = hunter;
+    public Treasure(){
+    }
+
+    public String getTreasureKit(){
+        return treasureKit;
     }
 
 
@@ -21,9 +25,35 @@ public class Treasure {
         else {
             treasure = "sword";
         }
-
-
     }
+
+    public String findTreasure(){
+        if (Town.ifNewTown == 0 ) {
+            int x = (int) (Math.random() * 100);
+            if (x < 50 && !(treasureKit.contains(treasure))) {
+                Town.ifNewTown++;
+                treasureKit+= treasure;
+                return "You have found the " + treasure + "!";
+            } else if (x< 50 && (treasureKit.contains(treasure))) {
+                return "You already have this item in your inventory";
+            } else {
+                Town.ifNewTown++;
+                return "You have not found the treasure. You can no longer look for treasure ";
+            }
+        }
+        else {
+            return "You can't search for treasure in this town anymore anymore";
+        }
+    }
+
+    public String checkInventory(){
+        if (getTreasureKit().contains("Sword") && getTreasureKit().contains("Shield") && getTreasureKit().contains("Spellbook")){
+            hasAllItems = true;
+            return "You have obtained all the treasure! The game is now over.";
+        }
+        return "";
+    }
+
 
 
 

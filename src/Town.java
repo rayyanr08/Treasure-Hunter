@@ -10,6 +10,8 @@ public class Town
     private Terrain terrain;
     private String printMessage;
     private boolean toughTown;
+    public static int ifNewTown = 0;
+
 
     //Constructor
     /**
@@ -73,6 +75,7 @@ public class Town
                 printMessage += "\nUnfortunately, your " + item + " broke.";
             }
 
+            ifNewTown = 0;
             return true;
         }
 
@@ -169,4 +172,6 @@ public class Town
         double rand = Math.random();
         return (rand < 0.5);
     }
+
+
 }

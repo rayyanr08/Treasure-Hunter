@@ -5,6 +5,7 @@
  *
  */
 import java.util.Scanner;
+import java.util.concurrent.TransferQueue;
 
 public class TreasureHunter
 {
@@ -12,6 +13,7 @@ public class TreasureHunter
     private Town currentTown;
     private Hunter hunter;
     private boolean hardMode;
+    private Treasure newTreasure;
 
     //Constructor
     /**
@@ -110,6 +112,7 @@ public class TreasureHunter
             System.out.println("(S)ell something at the shop.");
             System.out.println("(M)ove on to a different town.");
             System.out.println("(L)ook for trouble!");
+
             System.out.println("(F)ind Treasure in town");
             System.out.println("Give up the hunt and e(X)it.");
             System.out.println();
@@ -117,6 +120,7 @@ public class TreasureHunter
             choice = scanner.nextLine();
             choice = choice.toUpperCase();
             processChoice(choice);
+
         }
     }
 
@@ -137,7 +141,6 @@ public class TreasureHunter
                 //This town is going away so print its news ahead of time.
                 System.out.println(currentTown.getLatestNews());
                 enterTown();
-                Treasure newTreasure = new Treasure(hunter);
                 newTreasure.generateTreasure();
             }
         }
