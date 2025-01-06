@@ -106,7 +106,7 @@ public class TreasureHunter
         {
             System.out.println();
             System.out.println(currentTown.getLatestNews());
-            System.out.println("***");
+            System.out.println("\n***");
             System.out.println(hunter);
             System.out.println(currentTown);
             System.out.println("(B)uy something at the shop.");
@@ -116,8 +116,8 @@ public class TreasureHunter
 
             System.out.println("(F)ind Treasure in town");
             System.out.println("Give up the hunt and e(X)it.");
-            System.out.println();
-            System.out.print("What's your next move? ");
+            System.out.println("***\n");
+            System.out.print("What's your next move? \n");
             choice = scanner.nextLine();
             choice = choice.toUpperCase();
             processChoice(choice);
