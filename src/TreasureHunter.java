@@ -14,6 +14,7 @@ public class TreasureHunter
     private Hunter hunter;
     private boolean hardMode;
     private Treasure newTreasure;
+    public static boolean gameOver;
 
     //Constructor
     /**
@@ -26,6 +27,7 @@ public class TreasureHunter
         hunter = null;
         hardMode = false;
         newTreasure = new Treasure();
+        newTreasure.generateTreasure();
     }
 
     // starts the game; this is the only public method
@@ -102,7 +104,7 @@ public class TreasureHunter
         Scanner scanner = new Scanner(System.in);
         String choice = "";
 
-        while (!(choice.equals("X") || choice.equals("x")))
+        while ((!(choice.equals("X") || choice.equals("x")))  && !(gameOver))
         {
             System.out.println();
             System.out.println(currentTown.getLatestNews());
@@ -153,9 +155,9 @@ public class TreasureHunter
         {
             System.out.println("Fare thee well, " + hunter.getHunterName() + "!");
         } else if (choice.equals("F") || choice.equals("f")) {
-            newTreasure.generateTreasure();
-            newTreasure.findTreasure();
-            newTreasure.checkInventory();
+            System.out.println(newTreasure.findTreasure());
+            System.out.println(newTreasure.checkInventory());
+
 
         } else
         {

@@ -1,8 +1,6 @@
 public class Treasure {
     private String treasure;
     private String treasureKit = "";
-    private boolean hasAllItems;
-
 
     public Treasure(){
     }
@@ -27,6 +25,7 @@ public class Treasure {
         }
     }
 
+
     public String findTreasure(){
         if (Town.ifNewTown == 0 ) {
             int x = (int) (Math.random() * 100);
@@ -49,7 +48,7 @@ public class Treasure {
 
     public String checkInventory(){
         if (getTreasureKit().contains("Sword") && getTreasureKit().contains("Shield") && getTreasureKit().contains("Spellbook")){
-            hasAllItems = true;
+            TreasureHunter.gameOver = true;
             return "You have obtained all the treasure! The game is now over.";
         }
         return "";
