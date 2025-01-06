@@ -150,6 +150,7 @@ public class TreasureHunter
         else if (choice.equals("L") || choice.equals("l"))
         {
             currentTown.lookForTrouble();
+            hunter.ifBroke();
         }
         else if (choice.equals("X") || choice.equals("x"))
         {

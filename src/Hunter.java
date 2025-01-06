@@ -50,6 +50,13 @@ public class Hunter
         }
     }
 
+    public void ifBroke(){
+        if (getGold()==0){
+            System.out.println("You have lost all your gold. Game over!");
+            TreasureHunter.isGameOver = true;
+        }
+    }
+
     /**
      * Buys an item from a shop.
      *
