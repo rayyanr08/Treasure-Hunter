@@ -1,6 +1,6 @@
 public class Treasure {
     private String treasure;
-    private String treasureKit;
+    private String treasureKit = "";
     private boolean hasAllItems;
 
 
@@ -23,7 +23,7 @@ public class Treasure {
             treasure = "Spellbook";
         }
         else {
-            treasure = "sword";
+            treasure = "Sword";
         }
     }
 
@@ -34,6 +34,7 @@ public class Treasure {
                 Town.ifNewTown++;
                 treasureKit+= treasure;
                 return "You have found the " + treasure + "!";
+
             } else if (x< 50 && (treasureKit.contains(treasure))) {
                 return "You already have this item in your inventory";
             } else {

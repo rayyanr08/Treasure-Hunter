@@ -25,6 +25,7 @@ public class TreasureHunter
         currentTown = null;
         hunter = null;
         hardMode = false;
+        newTreasure = new Treasure();
     }
 
     // starts the game; this is the only public method
@@ -151,8 +152,10 @@ public class TreasureHunter
         else if (choice.equals("X") || choice.equals("x"))
         {
             System.out.println("Fare thee well, " + hunter.getHunterName() + "!");
-        } else if (choice.equalsIgnoreCase("f")) {
-
+        } else if (choice.equals("F") || choice.equals("f")) {
+            newTreasure.generateTreasure();
+            newTreasure.findTreasure();
+            newTreasure.checkInventory();
 
         } else
         {
