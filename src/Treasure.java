@@ -48,7 +48,7 @@ public class Treasure {
 
     public String checkInventory(){
         if (getTreasureKit().contains("Sword") && getTreasureKit().contains("Shield") && getTreasureKit().contains("Spellbook")){
-            TreasureHunter.gameOver = true;
+            TreasureHunter.isGameOver = true;
             return "You have obtained all the treasure! The game is now over.";
         }
         return "";

@@ -14,7 +14,7 @@ public class TreasureHunter
     private Hunter hunter;
     private boolean hardMode;
     private Treasure newTreasure;
-    public static boolean gameOver;
+    public static boolean isGameOver;
 
     //Constructor
     /**
@@ -104,7 +104,7 @@ public class TreasureHunter
         Scanner scanner = new Scanner(System.in);
         String choice = "";
 
-        while ((!(choice.equals("X") || choice.equals("x")))  && !(gameOver))
+        while ((!(choice.equals("X") || choice.equals("x")))  && !(isGameOver))
         {
             System.out.println();
             System.out.println(currentTown.getLatestNews());
