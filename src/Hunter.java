@@ -28,16 +28,19 @@ public class Hunter
     //Accessors
     public String getHunterName()
     {
+
         return hunterName;
     }
 
     public String getKit()
     {
+
         return kit;
     }
 
     public int getGold()
     {
+
         return gold;
     }
 

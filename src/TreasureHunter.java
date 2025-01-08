@@ -15,6 +15,7 @@ public class TreasureHunter
     private boolean hardMode;
     private Treasure newTreasure;
     public static boolean isGameOver;
+    public static boolean secret;
 
     //Constructor
     /**
@@ -28,6 +29,7 @@ public class TreasureHunter
         hardMode = false;
         newTreasure = new Treasure();
         newTreasure.generateTreasure();
+        secret = false;
     }
 
     // starts the game; this is the only public method
@@ -59,6 +61,10 @@ public class TreasureHunter
         {
             hardMode = true;
         }
+        if(hard.equalsIgnoreCase("C")){
+            Shop.changePrice(1);
+            secret = true;
+        }
     }
 
     /**
@@ -76,6 +82,7 @@ public class TreasureHunter
             // and the town is "tougher"
             toughness = 0.75;
         }
+
 
         // note that we don't need to access the Shop object
         // outside of this method, so it isn't necessary to store it as an instance
