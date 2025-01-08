@@ -40,7 +40,6 @@ public class Hunter
 
     public int getGold()
     {
-
         return gold;
     }
 

@@ -129,8 +129,8 @@ public class TreasureHunter
             System.out.println("(S)ell something at the shop.");
             System.out.println("(M)ove on to a different town.");
             System.out.println("(L)ook for trouble!");
-
             System.out.println("(F)ind Treasure in town");
+            System.out.println("(C)asino time!");
             System.out.println("Give up the hunt and e(X)it.");
             System.out.println("***\n");
             System.out.print("What's your next move? \n");
@@ -174,7 +174,11 @@ public class TreasureHunter
             System.out.println(newTreasure.checkInventory());
 
 
-        } else
+        }
+        else if (choice.equalsIgnoreCase("c")){
+
+        }
+        else
         {
             System.out.println("Yikes! That's an invalid option! Try again.");
         }

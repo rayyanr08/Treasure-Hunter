@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 /**
  * The Town Class is where it all happens.
  * The Town is designed to manage all of the things a Hunter can do in town.
@@ -136,6 +138,34 @@ public class Town
         }
     }
 
+
+    public int luckyDice()
+    {
+        Scanner scanner = new Scanner(System.in);
+        int wager;
+        boolean test = false;
+        while (test= false){
+            System.out.println("The game is called \"Lucky Dice\". What are you wagering today?");
+            String answer = scanner.nextLine();
+            wager = Integer.parseInt(answer);
+            if (wager < hunter.getGold()){
+                System.out.println("You can't wager what you don't have. Choose again.");
+            }
+            else
+                test = true;
+        }
+        System.out.println("Choose a number from 1 - 12");
+        String num = scanner.nextLine();
+        int numb = Integer.parseInt(num);
+
+        int dice = (int) ((Math.random()*7 +1) + (Math.random()*7+1));
+        if (num<=(dice+2)|| num>= dice)
+
+
+
+
+
+    }
 
 
     public String toString()
