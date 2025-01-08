@@ -12,7 +12,7 @@ public class TreasureHunter
     //Instance variables
     private Town currentTown;
     private Hunter hunter;
-    private boolean hardMode;
+    public static boolean hardMode;
     private Treasure newTreasure;
     public static boolean isGameOver;
     public static boolean secret;
@@ -53,7 +53,7 @@ public class TreasureHunter
         String name = scanner.nextLine();
 
         // set hunter instance variable
-        hunter = new Hunter(name, 10);
+
 
         System.out.print("Hard mode? (y/n): ");
         String hard = scanner.nextLine();
@@ -64,6 +64,13 @@ public class TreasureHunter
         if(hard.equalsIgnoreCase("C")){
             Shop.changePrice(1);
             secret = true;
+        }
+        if (!(hard.equalsIgnoreCase("y"))&& !(hard.equalsIgnoreCase("c")))
+        {
+        hunter = new Hunter(name, 30);
+        }
+        else {
+            hunter = new Hunter(name, 10);
         }
     }
 

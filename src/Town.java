@@ -108,6 +108,9 @@ public class Town
         if (TreasureHunter.secret){
             random = 2;
         }
+        if (!TreasureHunter.hardMode){
+        random +=0.5;
+        }
         if (Math.random() > noTroubleChance) {
             printMessage = "You couldn't find any trouble";
         } else {
