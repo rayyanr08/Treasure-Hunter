@@ -104,12 +104,12 @@ public class Town
             noTroubleChance = 1;
         }
 
-        int random = (int)(Math.random());
+        double random = (Math.random());
         if (TreasureHunter.secret){
             random = 2;
         }
         if (!TreasureHunter.hardMode){
-        random +=0.5;
+        random +=  0.3;
         }
         if (Math.random() > noTroubleChance) {
             printMessage = "You couldn't find any trouble";
@@ -176,6 +176,9 @@ public class Town
     private boolean checkItemBreak()
     {
         double rand = Math.random();
+        if(!(TreasureHunter.hardMode) && !(TreasureHunter.secret)){
+            rand = 1;
+        }
         return (rand < 0.5);
     }
 
