@@ -31,7 +31,11 @@ public class Town
         printMessage = "";
 
         // higher toughness = more likely to be a tough town
-        toughTown = (Math.random() < toughness);
+        if (!TreasureHunter.hardMode){
+            toughTown = false;
+        } else {
+            toughTown = (Math.random() < toughness);
+        }
     }
 
     public String getLatestNews()
@@ -97,7 +101,7 @@ public class Town
         double noTroubleChance = 0;
         if (toughTown && !(TreasureHunter.secret)) {
             noTroubleChance = 0.66;
-        } else if (!(toughTown)&& !(TreasureHunter.secret)){
+        } else if (!(toughTown)  && !(TreasureHunter.secret)){
             noTroubleChance = 0.33;
         }
         else if (TreasureHunter.secret) {
@@ -108,8 +112,8 @@ public class Town
         if (TreasureHunter.secret){
             random = 2;
         }
-        if (!TreasureHunter.hardMode){
-        random +=  0.3;
+        if (!TreasureHunter.hardMode && !toughTown){
+        random +=  0.25;
         }
         if (Math.random() > noTroubleChance) {
             printMessage = "You couldn't find any trouble";
