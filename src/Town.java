@@ -94,17 +94,20 @@ public class Town
      * The tougher the town, the easier it is to find a fight, and the harder it is to win one.
      */
     public void lookForTrouble() {
-        double noTroubleChance;
+        double noTroubleChance = 0;
         if (toughTown && !(TreasureHunter.secret)) {
             noTroubleChance = 0.66;
         } else if (!(toughTown)&& !(TreasureHunter.secret)){
             noTroubleChance = 0.33;
         }
-        else {
-            noTroubleChance = 0;
+        else if (TreasureHunter.secret) {
+            noTroubleChance = 1;
         }
 
-
+        int random = (int)(Math.random());
+        if (TreasureHunter.secret){
+            random = 2;
+        }
         if (Math.random() > noTroubleChance) {
             printMessage = "You couldn't find any trouble";
         } else {
@@ -114,7 +117,7 @@ public class Town
                 goldDiff = 100;
             }
 
-            if (Math.random() > noTroubleChance) {
+            if (random > noTroubleChance) {
                 printMessage += "Okay, stranger! You proved yer mettle. Here, take my gold.";
                 printMessage += "\nYou won the brawl and receive " + goldDiff + " gold.";
                 hunter.changeGold(goldDiff);
