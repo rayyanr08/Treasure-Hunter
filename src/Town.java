@@ -139,27 +139,65 @@ public class Town
     }
 
 
-    public int luckyDice()
+    public void luckyDice()
     {
-        Scanner scanner = new Scanner(System.in);
-        int wager;
+        int wager = 0;
         boolean test = false;
-        while (test= false){
-            System.out.println("The game is called \"Lucky Dice\". What are you wagering today?");
-            String answer = scanner.nextLine();
-            wager = Integer.parseInt(answer);
-            if (wager < hunter.getGold()){
-                System.out.println("You can't wager what you don't have. Choose again.");
-            }
-            else
-                test = true;
-        }
-        System.out.println("Choose a number from 1 - 12");
-        String num = scanner.nextLine();
-        int numb = Integer.parseInt(num);
+        boolean test2= false;
+        int numb = 0;
 
-        int dice = (int) ((Math.random()*7 +1) + (Math.random()*7+1));
-        if (num<=(dice+2)|| num>= dice)
+        if (hunter.getGold()==0){
+            System.out.println("You have 0 gold. You can't enter my casino. Get out of here!");
+        }
+        else {
+            System.out.println("The game is called \"Lucky Dice\".");
+            while (!test){
+
+                Scanner scanner = new Scanner(System.in);
+                System.out.println("What are you wagering today?");
+                String answer = scanner.nextLine();
+                wager = Integer.parseInt(answer);
+                if (wager> hunter.getGold()){
+                    System.out.println("You can't wager what you don't have. Choose again.");
+                }
+                else
+                    test = true;
+            }
+
+            System.out.println("Choose a number from 1 - 12");
+           while (!test2){
+               Scanner dices = new Scanner(System.in);
+               String num = dices.nextLine();
+               numb = Integer.parseInt(num);
+
+               if (!(1<=numb&&numb <=12)){
+                   System.out.println("That number is not within 1-12. Choose again.");
+
+               }
+               else {
+                   test2 = true;
+               }
+           }
+
+            int dice = (int) ((Math.random()*7 +1) + (Math.random()*7+1));
+            System.out.println("Rolling two dice.... and the number is..."+ dice +"!");
+            if (numb<=(dice+2)&& numb>= dice|| numb>= (dice-2) &&numb <=dice){
+                System.out.println("You are within the target, however you have not guessed the right number\nYou get your gold back!");
+            }
+            else if (numb ==dice){
+                System.out.println("You guessed the right target! You get double your gold!");
+                hunter.changeGold(wager*2);
+                System.out.println("You now have "+hunter.getGold()+" gold!");
+
+            }
+            else{
+                System.out.println("This is why you don't gamble, you are way off target and lost all your gold");
+                hunter.changeGold(0- wager);
+                System.out.println("You now have "+hunter.getGold()+" gold!");
+
+            }
+
+        }
 
 
 

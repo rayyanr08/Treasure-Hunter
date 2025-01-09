@@ -176,7 +176,7 @@ public class TreasureHunter
 
         }
         else if (choice.equalsIgnoreCase("c")){
-
+            currentTown.luckyDice();
         }
         else
         {
