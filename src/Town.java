@@ -187,12 +187,16 @@ public class Town
             else if (numb ==dice){
                 System.out.println("You guessed the right target! You get double your gold!");
                 hunter.changeGold(wager*2);
+                int gold = wager/10;
+                Treasure.changeLuck(gold);
                 System.out.println("You now have "+hunter.getGold()+" gold!");
 
             }
             else{
                 System.out.println("This is why you don't gamble, you are way off target and lost all your gold");
-                hunter.changeGold(0- wager);
+                hunter.changeGold(0-wager);
+                int gold = wager/10;
+                Treasure.changeLuck((0-gold));
                 System.out.println("You now have "+hunter.getGold()+" gold!");
 
             }

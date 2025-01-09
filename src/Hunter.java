@@ -179,7 +179,7 @@ public class Hunter
         while (printableKit.indexOf(KIT_DELIMITER) != -1)
         {
             index = printableKit.indexOf(KIT_DELIMITER);
-            printableKit = printableKit.substring(0, index) + space + printableKit.substring(index + 1);
+            printableKit = printableKit.substring(0, index) + space + printableKit.substring(index + 1) + "\nYour luck is:"+Treasure.getLuck();
         }
         return printableKit;
     }
