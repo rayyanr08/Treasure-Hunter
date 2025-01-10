@@ -175,11 +175,11 @@ public class Hunter
         String space = " ";
 
         int index = 0;
-
+        printableKit+= "Your luck is:"+Treasure.getLuck()+"\n";
         while (printableKit.indexOf(KIT_DELIMITER) != -1)
         {
             index = printableKit.indexOf(KIT_DELIMITER);
-            printableKit = printableKit.substring(0, index) + space + printableKit.substring(index + 1) + "\nYour luck is:"+Treasure.getLuck();
+            printableKit = printableKit.substring(0, index) + space + printableKit.substring(index + 1);
         }
         return printableKit;
     }
