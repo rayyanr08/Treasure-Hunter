@@ -1,14 +1,10 @@
 public class Treasure {
     private String treasure;
     private String treasureKit = "";
-    private static int luck =0;
 
     public Treasure(){
     }
 
-    public static int getLuck() {
-        return luck;
-    }
 
     public static void changeLuck(int luck) {
         luck += luck;
@@ -37,7 +33,7 @@ public class Treasure {
 
     public String findTreasure(){
         if (Town.ifNewTown == 0 ) {
-            int x = (int) (Math.random() * 100) + Treasure.getLuck();
+            int x = (int) (Math.random() * 100) + Town.luck;
             if (x > 50 && !(treasureKit.contains(treasure))) {
                 Town.ifNewTown++;
                 treasureKit+= treasure;

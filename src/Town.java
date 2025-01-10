@@ -13,6 +13,7 @@ public class Town
     private String printMessage;
     private boolean toughTown;
     public static int ifNewTown = 0;
+    public static int luck;
 
 
     //Constructor
@@ -138,6 +139,9 @@ public class Town
         }
     }
 
+    public void changeLuck(int num){
+        luck += num;
+    }
 
     public void luckyDice()
     {
@@ -188,7 +192,7 @@ public class Town
                 System.out.println("You guessed the right target! You get double your gold!");
                 hunter.changeGold(wager*2);
                 int gold = wager/10;
-                Treasure.changeLuck(gold);
+                changeLuck(gold);
                 printMessage="You now have "+hunter.getGold()+" gold!";
 
             }

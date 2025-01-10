@@ -55,7 +55,7 @@ public class Hunter
     public void ifBroke(){
         if (getGold()==0){
             System.out.println("You have lost all your gold from the brawl. Game over!");
-
+            TreasureHunter.isGameOver = true;
         }
     }
 
@@ -175,11 +175,11 @@ public class Hunter
         String space = " ";
 
         int index = 0;
-        printableKit+= "Your luck is:"+Treasure.getLuck()+"\n";
+
         while (printableKit.indexOf(KIT_DELIMITER) != -1)
         {
             index = printableKit.indexOf(KIT_DELIMITER);
-            printableKit = printableKit.substring(0, index) + space + printableKit.substring(index + 1);
+            printableKit = printableKit.substring(0, index) + space + printableKit.substring(index + 1) + "\nYour luck is:"+Town.luck;
         }
         return printableKit;
     }
