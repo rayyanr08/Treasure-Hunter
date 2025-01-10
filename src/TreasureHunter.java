@@ -7,8 +7,7 @@
 import java.util.Scanner;
 import java.util.concurrent.TransferQueue;
 
-public class TreasureHunter
-{
+public class TreasureHunter {
     //Instance variables
     private Town currentTown;
     private Hunter hunter;
@@ -16,13 +15,15 @@ public class TreasureHunter
     private Treasure newTreasure;
     public static boolean isGameOver;
     public static boolean secret;
+    public static final String ANSI_GREEN = "\033[0;32m";
+    public static final String ANSI_RESET = "\u001B[0m";
 
     //Constructor
+
     /**
      * Constructs the Treasure Hunter game.
      */
-    public TreasureHunter()
-    {
+    public TreasureHunter() {
         // these will be initialized in the play method
         currentTown = null;
         hunter = null;
@@ -30,7 +31,10 @@ public class TreasureHunter
         newTreasure = new Treasure();
         newTreasure.generateTreasure();
         secret = false;
+        isGameOver = false;
     }
+
+
 
     // starts the game; this is the only public method
     public void play ()
@@ -125,13 +129,13 @@ public class TreasureHunter
             System.out.println("\n***");
             System.out.println(hunter);
             System.out.println(currentTown);
-            System.out.println("(B)uy something at the shop.");
-            System.out.println("(S)ell something at the shop.");
-            System.out.println("(M)ove on to a different town.");
-            System.out.println("(L)ook for trouble!");
-            System.out.println("(F)ind Treasure in town");
-            System.out.println("(C)asino time!");
-            System.out.println("Give up the hunt and e(X)it.");
+            System.out.println(ANSI_GREEN+ "(B)"+ANSI_RESET +"uy something at the shop.");
+            System.out.println(ANSI_GREEN+ "(S)"+ANSI_RESET +"ell something at the shop.");
+            System.out.println(ANSI_GREEN+"(M)"+ANSI_RESET +"ove on to a different town.");
+            System.out.println(ANSI_GREEN+"(L)"+ANSI_RESET +"ook for trouble!");
+            System.out.println(ANSI_GREEN+"(F)"+ANSI_RESET +"ind Treasure in town");
+            System.out.println(ANSI_GREEN+"(C)"+ANSI_RESET +"asino time!");
+            System.out.println("Give up the hunt and e"+ANSI_GREEN+"(X)"+ANSI_RESET +"it.");
             System.out.println("***\n");
             System.out.print("What's your next move? \n");
             choice = scanner.nextLine();
