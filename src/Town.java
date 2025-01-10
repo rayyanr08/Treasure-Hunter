@@ -179,7 +179,7 @@ public class Town
                }
            }
 
-            int dice = (int) ((Math.random()*7 +1) + (Math.random()*7+1));
+            int dice = (int) ((Math.random()*6 +1) + (Math.random()*6+1));
             System.out.println("Rolling two dice.... and the number is..."+ dice +"!");
             if (numb<=(dice+2)&& numb>= dice|| numb>= (dice-2) &&numb <=dice){
                 System.out.println("You are within the target, however you have not guessed the right number\nYou get your gold back!");
