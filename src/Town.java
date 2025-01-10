@@ -182,14 +182,14 @@ public class Town
             int dice = (int) ((Math.random()*6 +1) + (Math.random()*6+1));
             System.out.println("Rolling two dice.... and the number is..."+ dice +"!");
             if (numb<=(dice+2)&& numb>= dice|| numb>= (dice-2) &&numb <=dice){
-                System.out.println("You are within the target, however you have not guessed the right number\nYou get your gold back!");
+                printMessage="You are within the target, however you have not guessed the right number\nYou get your gold back!";
             }
             else if (numb ==dice){
                 System.out.println("You guessed the right target! You get double your gold!");
                 hunter.changeGold(wager*2);
                 int gold = wager/10;
                 Treasure.changeLuck(gold);
-                System.out.println("You now have "+hunter.getGold()+" gold!");
+                printMessage="You now have "+hunter.getGold()+" gold!";
 
             }
             else{
@@ -197,7 +197,7 @@ public class Town
                 hunter.changeGold(0-wager);
                 int gold = wager/10;
                 Treasure.changeLuck((0-gold));
-                System.out.println("You now have "+hunter.getGold()+" gold!");
+                printMessage= "You now have "+hunter.getGold()+" gold!";
 
             }
 
